@@ -114,13 +114,50 @@ Traduz nomes de domínio (ex: google.com) para endereços IP.
 ---
 
 ## 7. Controle de Versão (Git)
-*Gestão de código fonte.*
+*Gestão de código fonte e comandos essenciais.*
 
-- **Git:** Sistema de controle de versão distribuído.
-- **Conceitos Chave:**
-    - *Working Tree:* Área de trabalho atual.
-    - *Index (Staging):* Área de preparação.
-    - *Commit:* Registro permanente (snapshot).
-- **Branch:** Linha de desenvolvimento paralela.
-- **Merge:** Fusão de branches (pode gerar conflitos).
-- **Git Stash:** Salva mudanças temporariamente sem commitar.
+### Configuração Inicial
+Definição de identidade do usuário (Aula 11).
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seu@email.com"
+```
+Movimentação entre Working Tree, Index e Repositório (Aula 11).
+```bash
+# Verificar status dos arquivos
+git status
+```
+# Adicionar arquivos ao Index (Staging Area)
+```bash
+git add nome_do_arquivo   # Um arquivo específico
+git add .                 # Todos os arquivos
+```
+
+# Criar um snapshot (Commit)
+```bash
+git commit -m "Mensagem descrevendo a alteração"
+```
+
+Branches (Ramificações)
+Trabalho paralelo e isolado (Aula 12).
+
+# Listar branches
+```bash
+git branch
+```
+# Criar nova branch
+```bash
+git branch nome-da-feature
+```
+# Trocar de branch (mover o HEAD)
+```bash
+git checkout nome-da-feature
+# ou (comando mais moderno)
+git switch nome-da-feature
+```
+Merge (Fusão)
+Unindo históricos (Aula 12).
+# Estando na branch principal (ex: main), fundir a branch de feature:
+```bash
+git merge nome-da-feature
+```
